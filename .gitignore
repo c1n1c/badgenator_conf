@@ -17,6 +17,7 @@
 /log/*.log
 /tmp
 .project
+.settings
 .rvmrc
 .ruby-version
 
