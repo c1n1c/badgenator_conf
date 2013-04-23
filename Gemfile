@@ -14,7 +14,9 @@ gem 'carrierwave'
 gem 'mini_magick' # производительнее и кушает меньше памяти
 
 gem 'kaminari'
-gem "simple-navigation"
+gem 'simple-navigation'
+
+gem 'validates_existence'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -31,7 +33,7 @@ end
 
 group :tests do
   gem 'shoulda-matchers'
-  gem 'capybara'  
+  gem 'capybara'
   gem 'faker'
   gem 'database_cleaner'
 end
