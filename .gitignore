@@ -16,6 +16,12 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+.project
 .rvmrc
+.ruby-version
 
+/db/schema.rb
+/config/database.yml
 /public/uploads
+/Gemfile.lock
+

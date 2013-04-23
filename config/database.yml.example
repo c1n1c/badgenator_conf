@@ -1,0 +1,17 @@
+development:
+  adapter: postgresql
+  database: bg_dev
+  username: 'bg'
+  password: 'password'
+
+test:
+  adapter: postgresql
+  database: bg_test
+  username: 'bg'
+  password: 'password'
+
+production:
+  adapter: postgresql
+  database: bg
+  username: 'bg'
+  password: 'password'
