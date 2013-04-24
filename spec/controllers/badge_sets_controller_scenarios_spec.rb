@@ -26,11 +26,11 @@ describe "BadgeSetsController Scenarios" do
     # Pagination    
     it do
       within('.pagination') do
-        should have_css 'li', count: 4
-        should have_css 'li.active', count: 1, text: "1"
+        should have_css 'span', count: 4
+        should have_css 'span.page.current', count: 1, text: "1"
         
-        should have_css 'li', text: "1"
-        should have_css 'li', text: "2"
+        should have_css 'span', text: "1"
+        should have_css 'span', text: "2"
       end
     end
     

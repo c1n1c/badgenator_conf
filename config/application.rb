@@ -11,6 +11,8 @@ end
 
 module Badgenator
   class Application < Rails::Application
+    config.i18n.default_locale = :ru
+
     config.action_view.field_error_proc = proc { |html_tag, instance| html_tag.html_safe }
     
     # Settings in config/environments/* take precedence over those specified here.
