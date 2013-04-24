@@ -9,20 +9,24 @@
 %table.table.table-hover
   %thead
     %tr
-      %th= t(:name, scope: 'activerecord.attributes.badge_set')
-
+      %th= t('activerecord.attributes.badge_set.image')
+      %th= t('activerecord.attributes.badge_set.name')
       %th &nbsp;
 
   %tbody
-    - 10.times.each do |i|
+    - @badge_sets.each do |badge_set|
       %tr
-        %td= "Сет #{i}"
+        %td= image_tag ""
+        %td= badge_set.name
         %td
           .btn-group
-            %button.btn{data: {click: "#"}= t('forms.labels.see')
+            %button.btn{data: {click: "#"}}= t('forms.labels.see')
             %button.btn.dropdown-toggle{'data-toggle' => "dropdown"}
               %span.caret
             
             %ul.dropdown-menu
-              %li
-                = link_to t('forms.labels.delete'), "#", onclick: "alert('O, RLY!?')"
+              %li= link_to t('forms.labels.print'), print_badge_set_url(badge_set)
+              %li= link_to t('forms.labels.edit'), edit_badge_set_url(badge_set)
+              %li= link_to t('forms.labels.delete'), badge_set, :method => :delete, :confirm => t('forms.alerts.are_you_sure')
+
+= paginate @badge_sets

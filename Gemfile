@@ -6,12 +6,12 @@ gem 'pg'
 gem 'foreigner'
 
 gem 'jquery-rails'
-gem 'haml'
 gem 'haml-rails'
+
 gem 'russian'
 
 gem 'carrierwave'
-gem 'rmagick'
+gem 'mini_magick' # производительнее и кушает меньше памяти
 
 gem 'kaminari'
 gem "simple-navigation"
@@ -19,9 +19,8 @@ gem "simple-navigation"
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
-
+  gem 'sass-rails', '~> 3.2.3'
   gem 'uglifier', '>= 1.0.3'
 end
 
@@ -31,10 +30,16 @@ group :linux do
 end
 
 group :tests do
-  gem 'rspec'
-  gem 'rspec-rails'
   gem 'shoulda-matchers'
   gem 'capybara'  
-  gem 'factory_girl'
   gem 'faker'
+  gem 'database_cleaner'
+end
+
+group :development, :tests do
+  # Эти гемы должны быть как в test, так и в development
+  # постольку поскольку они имеют генераторы
+  # соотв. для спеков и фабрик.
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
 end
