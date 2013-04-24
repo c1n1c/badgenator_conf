@@ -1,11 +1,12 @@
 - if notice.present?
-  .alert.alert-success{data: {autoclose: true}}
+  .alert.alert-success{:data => {:autoclose => true}}
     = notice
 
 .btn-group.action-buttons
-  %button.btn{data: {click: "/"}}
+  %button.btn{:data => {:click => badge_set_badges_url(@badge_set)}}
     = t 'forms.labels.back'
-  %button.btn.btn-primary{data: {click: "#"}}
+  %button.btn.btn-primary{:data => {:click => edit_badge_set_badge_url(@badge_set, @badge)}}
     = t 'forms.labels.edit'
 
-= render partial: 'badge'
+  %br/
+  = render partial: 'badge'
