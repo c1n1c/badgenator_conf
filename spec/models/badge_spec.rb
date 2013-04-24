@@ -3,7 +3,7 @@ require 'spec_helper'
 describe Badge do
 
   describe "database schema" do
-  	it { should belong_to :badge_set }
+    it { should belong_to :badge_set }
     it { should have_db_column(:name).of_type(:string).with_options(:null => false) }
     it { should have_db_column(:surname).of_type(:string) }
     it { should have_db_column(:company).of_type(:string) }
@@ -18,7 +18,9 @@ describe Badge do
   describe "validations" do
     it { should validate_presence_of(:name) }
     it { should validate_presence_of(:company) }
-    it { should validate_presence_of(:badge_set_id) }
+    it { should allow_value(nil).for(:surname) }
+    it { should allow_value(nil).for(:profession) }
+    it { should validate_existence_of(:badge_set) }
     it { should ensure_length_of(:name).is_at_least(2).is_at_most(30) }
     it { should ensure_length_of(:company).is_at_least(3).is_at_most(30) }
     it { should ensure_length_of(:surname).is_at_least(2).is_at_most(30) }
