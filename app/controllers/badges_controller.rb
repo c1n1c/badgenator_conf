@@ -10,14 +10,10 @@ class BadgesController < ApplicationController
 
   def index
     @badges = @badge_set.badges.page(params[:page]).per(5)
-
-    respond_to { |format| format.html }
   end
 
   def new
     @badge = Badge.new
-
-    respond_to { |format| format.html }
   end
 
   def edit
@@ -27,30 +23,25 @@ class BadgesController < ApplicationController
   def create
     @badge = @badge_set.badges.new(params[:badge])
 
-    respond_to do |format|
-      if @badge.save
-        format.html { redirect_to [@badge_set, @badge], notice: I18n.t('controllers.badges.actions.create.notice') }
-      else
-        format.html { render action: :new }
-      end
+    if @badge.save
+      redirect_to [@badge_set, @badge], :notice => I18n.t('controllers.badges.actions.create.notice')
+    else
+      render action: :new
     end
+
   end
 
   def update
-    respond_to do |format|
-      if @badge.update_attributes(params[:badge])
-        format.html { redirect_to badge_set_badges_url(@badge_set), notice: I18n.t('controllers.badges.actions.update.notice') }
-      else
-        format.html { render action: :edit }
-      end
+    if @badge.update_attributes(params[:badge])
+      redirect_to badge_set_badges_url(@badge_set), :notice => t('controllers.badges.actions.update.notice')
+    else
+      render :action => :edit
     end
   end
 
   def destroy
     @badge.destroy
 
-    respond_to do |format|
-      format.html { redirect_to badge_set_badges_url(@badge_set), notice: I18n.t('controllers.badges.actions.destroy.notice') }
-    end
+    redirect_to badge_set_badges_url(@badge_set), :notice => t('controllers.badges.actions.destroy.notice')
   end
 end
