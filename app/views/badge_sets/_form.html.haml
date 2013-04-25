@@ -10,7 +10,7 @@
           %li= "#{attr_name} #{message}"
 
 .well
-  = form_for @badge_set, :html => {:class => 'form form-horizontal'} do |f|
+  = form_for @badge_set, :html => {:multipart => true, :class => 'form form-horizontal'} do |f|
     .control-group.error
       = f.label :name, t('activerecord.attributes.badge_set.name'), :class => 'control-label'
       .controls
@@ -19,6 +19,8 @@
       = f.label :image, t('activerecord.attributes.badge_set.image'), :class => 'control-label'
       .controls
         = f.file_field :image
+      - unless @badge_set.new_record?
+        = image_tag @badge_set.image.badge
     .control-group
       = f.label :source, t('activerecord.attributes.badge_set.source'), :class => 'control-label'
       .controls
