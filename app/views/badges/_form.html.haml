@@ -10,22 +10,22 @@
 .well
   = form_for [@badge_set, @badge], :html => {:class => 'form form-horizontal'} do |f|
     .control-group
-      = f.label :name, t('activerecord.attributes.badge.name'), :class => 'control-label'
+      = f.label :name, t('.name'), :class => 'control-label'
       .controls
         = f.text_field :name
 
     .control-group
-      = f.label :surname, t('activerecord.attributes.badge.surname'), :class => 'control-label'
+      = f.label :surname, t('.surname'), :class => 'control-label'
       .controls
         = f.text_field :surname
 
     .control-group
-      = f.label :company, t('activerecord.attributes.badge.company'), :class => 'control-label'
+      = f.label :company, t('.company'), :class => 'control-label'
       .controls
         = f.text_field :company
 
     .control-group
-      = f.label :profession, t('activerecord.attributes.badge.profession'), :class => 'control-label'
+      = f.label :profession, t('.profession'), :class => 'control-label'
       .controls
         = f.text_field :profession
 

@@ -23,7 +23,7 @@ ru:
 
   activerecord:
     attributes:
-      badge:
+      badge: &badge
         name: "Имя"
         surname: "Фамилия"
         company: "Компания"
@@ -35,3 +35,7 @@ ru:
         surname: "Пушкин"
         company: "ОАО «Россия»"
         profession: "Поэт"
+
+  badges:
+    form:
+      <<: *badge
