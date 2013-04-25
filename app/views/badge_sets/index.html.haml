@@ -16,7 +16,7 @@
   %tbody
     - @badge_sets.each do |badge_set|
       %tr
-        %td= image_tag ""
+        %td= image_tag badge_set.image.thumb
         %td= badge_set.name
         %td
           .btn-group
