@@ -1,13 +1,13 @@
 .badge-kh.badge-k-2h
   .picture
-    %img{src:"/assets/rails.png"}
+    %img{:src => ''}
 
   .information
     %h3
-      ОАО
+      = @badge.company
       %br/
-      Роскомстар
-  
+      = @badge.profession
+
   .personality
-    %h1 Иван
-    %h1 Метродонт
+    %h1= @badge.name
+    %h1= @badge.surname
