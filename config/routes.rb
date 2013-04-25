@@ -1,3 +1,5 @@
+# coding: utf-8
+
 Badgenator::Application.routes.draw do
   root :to => 'welcome#index'
 
@@ -7,8 +9,12 @@ Badgenator::Application.routes.draw do
     resources :badges do
       get 'page/:page', :action => :index, :on => :collection
     end
-    
+
     get 'page/:page', :action => :index, :on => :collection
     get 'print', :action => :print, :on => :member
+  end
+
+  unless Rails.application.config.consider_all_requests_local
+    match '*not_found', :to => 'errors#error_404'
   end
 end
