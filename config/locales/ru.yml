@@ -41,10 +41,9 @@ ru:
     response:
       error_404: "Страница <code>%{page}</code> не найдена"
 
-  views:
-    pagination:
-      first: "Начало"
-      last: "Конец"
-      previous: "&larr;"
-      next: "&rarr;"
-      truncate: "&hellip;"
+  kaminari:
+    first_page: "Начало"
+    last_page: "Конец"
+    prev_page: "&larr;"
+    next_page: "&rarr;"
+    gap: "&hellip;"
