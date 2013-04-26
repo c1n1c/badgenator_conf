@@ -1,3 +1,4 @@
+# coding: utf-8
 class BadgeSetsController < ApplicationController
   respond_to :html, only: [:print, :index, :edit]
 
