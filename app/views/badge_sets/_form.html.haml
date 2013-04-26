@@ -1,13 +1,11 @@
 - if @badge_set.errors.messages.present?
   .alert.alert-danger.alert-block
-    - errors_plural = Russian.p 100500, *t('forms.errors.errors_separate_you')
-    %h4= t 'forms.errors.almost_complete', count: 5, errors: " бывает и так"
+    - errors_plural = Russian.p @badge_set.errors.count, *t('forms.errors.errors_separate_you')
+    %h4= t 'forms.errors.almost_complete', :count => @badge_set.errors.count, :errors => errors_plural
     %br/
     %ol
-      - @badge_set.errors.messages.each do |attr, messages|
-        - attr_name = t("activerecord.attributes.badge_set.#{attr}")
-        - messages.each do |message|
-          %li= "#{attr_name} #{message}"
+      - @badge_set.errors.full_messages.each do |message|
+        %li= message
 
 .well
   = form_for @badge_set, :html => {:multipart => true, :class => 'form form-horizontal'} do |f|
