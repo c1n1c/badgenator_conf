@@ -25,4 +25,7 @@
 /config/database.yml
 /public/uploads
 /Gemfile.lock
+/public/assets/
+/.sass-cache/
+
 

@@ -20,7 +20,7 @@
         %td= badge_set.name
         %td
           .btn-group
-            %button.btn{data: {click: "#"}}= t('forms.labels.see')
+            %button.btn{data: {click: badge_set_badges_path(badge_set)}}= t('forms.labels.see')
             %button.btn.dropdown-toggle{'data-toggle' => "dropdown"}
               %span.caret
             

@@ -1,5 +1,4 @@
 # coding: utf-8
-
 class Badge < ActiveRecord::Base
   attr_accessible :name, :surname, :company, :profession
   attr_readonly :badge_set

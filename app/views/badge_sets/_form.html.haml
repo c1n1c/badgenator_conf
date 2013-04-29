@@ -10,17 +10,17 @@
 .well
   = form_for @badge_set, :html => {:multipart => true, :class => 'form form-horizontal'} do |f|
     .control-group.error
-      = f.label :name, t('activerecord.attributes.badge_set.name'), :class => 'control-label'
+      = f.label :name, t('.name'), :class => 'control-label'
       .controls
         = f.text_field :name
     .control-group
-      = f.label :image, t('activerecord.attributes.badge_set.image'), :class => 'control-label'
+      = f.label :image, t('.image'), :class => 'control-label'
       .controls
         = f.file_field :image
       - unless @badge_set.new_record?
         = image_tag @badge_set.image.badge
     .control-group
-      = f.label :source, t('activerecord.attributes.badge_set.source'), :class => 'control-label'
+      = f.label :source, t('.source'), :class => 'control-label'
       .controls
         = f.file_field :source
 

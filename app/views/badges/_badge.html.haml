@@ -1,7 +1,8 @@
 .badge-kh.badge-k-2h
-  .picture
-    %img{:src => ''}
-
+  - image = @badge.badge_set.image.badge
+  - if image.present?
+    .picture
+      = image_tag image
   .information
     %h3
       = @badge.company

@@ -1,3 +1,4 @@
+# coding: utf-8
 class BadgesController < ApplicationController
   respond_to :html
   
@@ -24,7 +25,7 @@ class BadgesController < ApplicationController
     @badge = @badge_set.badges.new(params[:badge])
 
     if @badge.save
-      redirect_to [@badge_set, @badge], :notice => I18n.t('controllers.badges.actions.create.notice')
+      redirect_to [@badge_set, @badge], :notice => t('controllers.badges.actions.create.notice')
     else
       render action: :new
     end
