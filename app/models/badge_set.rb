@@ -1,5 +1,4 @@
 # coding: utf-8
-
 class BadgeSet < ActiveRecord::Base
   attr_accessible :name, :image, :source
 

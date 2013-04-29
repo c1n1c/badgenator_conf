@@ -1,3 +1,4 @@
+# coding: utf-8
 class BadgeSetsController < ApplicationController
   respond_to :html, only: [:print, :index, :edit]
 
@@ -23,7 +24,7 @@ class BadgeSetsController < ApplicationController
     @badge_set = BadgeSet.new(params[:badge_set])
 
     if @badge_set.save
-      redirect_to badge_set_badges_url(@badge_set), :notice => I18n.t('controllers.badge_sets.actions.create.notice')
+      redirect_to badge_set_badges_url(@badge_set), :notice => t('controllers.badge_sets.actions.create.notice')
     else
       render :action => :new
     end
@@ -31,7 +32,7 @@ class BadgeSetsController < ApplicationController
 
   def update
     if @badge_set.update_attributes(params[:badge_set])
-      redirect_to badge_set_badges_url(@badge_set), :notice => I18n.t('controllers.badge_sets.actions.update.notice')
+      redirect_to badge_set_badges_url(@badge_set), :notice => t('controllers.badge_sets.actions.update.notice')
     else
       render :action => :edit
     end
@@ -39,7 +40,7 @@ class BadgeSetsController < ApplicationController
 
   def destroy
     if @badge_set.destroy
-      redirect_to badge_sets_url, :notice => I18n.t('controllers.badge_sets.actions.destroy.notice')
+      redirect_to badge_sets_url, :notice => t('controllers.badge_sets.actions.destroy.notice')
     else
       redirect_to :index
     end
