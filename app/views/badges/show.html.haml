@@ -9,4 +9,4 @@
     = t 'forms.labels.edit'
 
   %br/
-  = render partial: 'badge'
+  = render :partial => 'badge', :locals => {:badge => @badge}

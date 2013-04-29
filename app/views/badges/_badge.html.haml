@@ -1,14 +1,15 @@
 .badge-kh.badge-k-2h
-  - image = @badge.badge_set.image.badge
+  - image = badge.badge_set.image.badge
   - if image.present?
     .picture
       = image_tag image
+
   .information
     %h3
-      = @badge.company
+      = badge.company
       %br/
-      = @badge.profession
+      = badge.profession
 
   .personality
-    %h1= @badge.name
-    %h1= @badge.surname
+    %h1= badge.name
+    %h1= badge.surname

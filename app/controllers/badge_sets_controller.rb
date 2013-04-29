@@ -2,11 +2,12 @@
 class BadgeSetsController < ApplicationController
   respond_to :html, only: [:print, :index, :edit]
 
-  layout 'print', only: [:print]
+  layout 'print', :only => [:print]
   
   before_filter :assign_badge_set, :only => [:print, :edit, :update, :destroy]
   
   def print
+    @badges = @badge_set.badges
   end
   
   def index
