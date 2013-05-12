@@ -11,6 +11,8 @@ class BadgeSet < ActiveRecord::Base
 
 
   mount_uploader :image, ImageUploader
+  process_in_background :image
+
   mount_uploader :source, SourceUploader
 
 
