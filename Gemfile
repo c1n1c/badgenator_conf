@@ -18,6 +18,9 @@ gem 'simple-navigation'
 
 gem 'validates_existence'
 
+gem 'resque'
+gem 'carrierwave_backgrounder'
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -36,6 +39,7 @@ group :tests do
   gem 'capybara'
   gem 'faker'
   gem 'database_cleaner'
+  gem 'rspec-resque'
 end
 
 group :development, :tests do
